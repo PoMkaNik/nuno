@@ -1,8 +1,50 @@
 /*========== NAVBAR TRANSPARENT TO SOLID ==========*/
+$(document).ready(function () {
+  checkScroll();
+  $(window).scroll(checkScroll);
+});
+
+function checkScroll() {
+  if ($(window).scrollTop() >= 300) {
+    $('.navbar').addClass('solid');
+    if (!$('.navbar-collapse').hasClass('show')) {
+      $('.navbar').removeClass('solid-toggle');
+    }
+  } else {
+    $('.navbar').removeClass('solid');
+    if ($('.navbar-collapse').hasClass('show')) {
+      $('.navbar').addClass('solid-toggle');
+    }
+  }
+}
 
 /*========== ADD SOLID CLASS TO NAVBAR WHEN TOGGLED ==========*/
+$(document).ready(function () {
+  $('.navbar-toggler').click(function () {
+    if ($(window).scrollTop() <= 300) {
+      $('.navbar').toggleClass('solid-toggle');
+    }
+  });
+});
 
 /*========== CLOSE MOBILE MENU ON CLICK & SMOOTH SCROLL TO LINK ==========*/
+
+$(document).on('click', 'a[href^="#"]', function (event) {
+  event.preventDefault();
+  $('.navbar-toggler').addClass('collapsed');
+  $('.navbar-collapse').removeClass('show');
+
+  setTimeout(function () {
+    $('nav.navbar').removeClass('solid-toggle');
+  }, 300);
+
+  $('html, body').animate(
+    {
+      scrollTop: $($.attr(this, 'href')).offset().top,
+    },
+    1000,
+  );
+});
 
 /*========== BOUNCING DOWN ARROW ==========*/
 
