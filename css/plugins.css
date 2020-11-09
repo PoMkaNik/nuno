@@ -10,7 +10,7 @@
 	animation-delay: none !important;
 	}
 
-/*-- TURN OFF WAYPOINTS/ANIMATION ON MOBILE --*
+/*-- TURN OFF WAYPOINTS/ANIMATION ON MOBILE --*/
 @media (max-width: 767px) {
 .animated, .os-animation {
 	-webkit-animation: none!important;
