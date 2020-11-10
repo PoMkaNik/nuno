@@ -135,6 +135,13 @@ $(document).ready(function () {
 
 **Remember to use "animate__animated animate__fadeInUp" ==========*/
 
+$(document).ready(function () {
+  if ($(window).width() < 768) {
+    $('div').attr('data-animation', 'animate__animated animate__fadeInUp');
+    $('div').attr('data-delay', '0s');
+  }
+});
+
 /*========== WAYPOINTS ANIMATION DELAY ==========*/
 //Original Resource: https://www.oxygenna.com/tutorials/scroll-animations-using-waypoints-js-animate-css
 $(function () {

@@ -222,7 +222,6 @@ h3.heading {
 .fixed {
   position: relative;
   width: 100%;
-  display: table;
 }
 
 .fixed-wrap {
@@ -493,25 +492,84 @@ a.top-scroll:hover {
 
 /* Devices under 992px (lg) */
 
+@media (max-width: 991.98px) {
+  .caption h1 {
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .caption h3 {
+    font-size: 2.2rem;
+    padding-bottom: 1.7rem;
+  }
+
+  .caption .btn-lg {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .clients img {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
 /* Devices under 768px (md) */
+
+@media (max-width: 767.98px) {
+  .caption h1 {
+    font-size: 2.7rem;
+    letter-spacing: 0.15rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .caption h3 {
+    font-size: 1.7rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .caption .btn-lg {
+    padding: 0.6rem 1.1rem;
+  }
+
+  #features h1 {
+    font-size: 2rem;
+  }
+
+  .fixed-dark {
+    background-image: url('../img/fixed/apple-mobile.jpg');
+  }
+
+  .fixed-light {
+    background-image: url('../img/fixed/office-mobile.jpg');
+  }
+
+  .footer {
+    background: url('../img/footer/footer-mobile.jpg');
+  }
+
+  .top-scroll {
+    display: none !important;
+  }
+}
 
 /* Devices under 576px (sm) */
 
-/*============ BOOTSTRAP BREAK POINTS:
+@media (max-width: 575.98px) {
+  .caption h1 {
+    font-size: 1.9rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 0.4rem;
+  }
 
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
+  .caption h3 {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+  }
 
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-
-=============*/
+  .caption .btn-lg {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
