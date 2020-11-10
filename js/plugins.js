@@ -56,6 +56,14 @@ $(document).ready(function () {
 
 /*========== LIGHTBOX IMAGE GALLERY ==========*/
 
+$(document).ready(function () {
+  lightbox.option({
+    resizeDuration: 600,
+    wrapAround: false,
+    imageFadeDuration: 500,
+  });
+});
+
 /*========== MEET THE TEAM CAROUSEL ==========*/
 
 /*========== SKILLS COUNTER ==========*/
