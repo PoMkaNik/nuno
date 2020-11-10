@@ -222,6 +222,7 @@ h3.heading {
 .fixed {
   position: relative;
   width: 100%;
+  /* display: table; */
 }
 
 .fixed-wrap {
