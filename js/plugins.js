@@ -66,6 +66,28 @@ $(document).ready(function () {
 
 /*========== MEET THE TEAM CAROUSEL ==========*/
 
+$(document).ready(function () {
+  $('#team-carousel').owlCarousel({
+    autoplay: true,
+    autoplayHoverPause: true,
+    loop: true,
+    autoplayTimeout: 5000,
+    smartSpeed: 1200,
+    dotsSpeed: 1000,
+    responsive: {
+      0: {
+        items: 1, //0px width and up display 1 item
+      },
+      768: {
+        items: 2,
+      },
+      992: {
+        items: 3,
+      },
+    },
+  });
+});
+
 /*========== SKILLS COUNTER ==========*/
 
 /*========== CLIENTS CAROUSEL ==========*/
