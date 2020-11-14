@@ -90,36 +90,9 @@ a.btn,
 
 /*============= LANDING PAGE =============*/
 
-/*--- Fixed Landing Page Section --*/
-.landing {
-  position: relative;
-  width: 100%;
+/*-- Parallax Landing Page Section --*/
+.parallax-home {
   height: 100vh;
-  display: table;
-  z-index: -1;
-}
-
-.home-wrap {
-  clip: rect(0, auto, auto, 0);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.home-inner {
-  background-image: url('../img/computers.jpg');
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  display: table;
-  /* mobile device position:fixed issue fix */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
 }
 
 /*-- Landing Page Caption --*/
@@ -216,46 +189,11 @@ h3.heading {
   padding-bottom: 0.4rem;
 }
 
-/*===== FIXED BACKGROUND IMG DARK =====*/
+/*===== PARALLAX BACKGROUND IMG DARK =====*/
 
-/*--- iOS Fixed Background Image --*/
-.fixed {
-  position: relative;
-  width: 100%;
-  /* display: table; */
-}
-
-.fixed-wrap {
-  clip: rect(0, auto, auto, 0);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -9999;
-}
-
-.fixed-dark {
-  background-image: url('../img/fixed/apple.jpg');
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  display: table;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  /* mobile device position:fixed issue fix */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-.dark {
+.dark-background {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 7rem 0;
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 
 /*============= PORTFOLIO SECTION =============*/
@@ -354,27 +292,9 @@ ul.social li a:hover {
 
 /*--- Team Light Background Image --*/
 
-.fixed-light {
-  background-image: url('../img/fixed/office.jpg');
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  display: table;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  /* mobile device position:fixed issue fix */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-.light {
+.light-background {
   background-color: rgba(255, 255, 255, 0.75);
-  padding: 5rem 0;
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 
 /*============= SKILLS SECTION =============*/
@@ -519,6 +439,11 @@ a.top-scroll:hover {
 /* Devices under 768px (md) */
 
 @media (max-width: 767.98px) {
+  .parallax-home {
+    height: 100vh;
+    min-height: 500px;
+  }
+
   .caption h1 {
     font-size: 2.7rem;
     letter-spacing: 0.15rem;
@@ -547,7 +472,7 @@ a.top-scroll:hover {
   }
 
   .footer {
-    background: url('../img/footer/footer-mobile.jpg');
+    background: url('../img/footer/footer-mobile.jpg') no-repeat;
   }
 
   .top-scroll {
@@ -573,4 +498,67 @@ a.top-scroll:hover {
     padding: 0.4rem 0.9rem;
     font-size: 0.9rem;
   }
+}
+
+/*--- Prevent WayPoints from Browser Window Scrolling On Mobile --*/
+/* Devices under 768px (md) */
+@media (max-width: 767px) {
+  .row {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+
+/*-- Don't modify waypoints CSS below,
+this is required for waypoints to work --*/
+.os-animation {
+  opacity: 0;
+  margin: 0 !important;
+  max-width: 100%;
+}
+.os-animation.animated {
+  opacity: 1;
+}
+
+/*============= UNIVERSAL PARALLAX PLUGIN CSS =============*/
+.parallax-container {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+}
+.parallax-container .parallax-content {
+  margin: 0 auto;
+  width: 100%;
+}
+.parallax__container {
+  clip: rect(0, auto, auto, 0);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -100;
+}
+.parallax__container .parallax {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 100%;
 }
